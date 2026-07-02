@@ -238,6 +238,98 @@ export default function Index() {
           </div>
         </div>
       </section>
+
+      <section className="relative overflow-hidden py-20 lg:py-28">
+        <div className="pointer-events-none absolute top-0 right-1/4 w-[34rem] h-[34rem] rounded-full bg-accent/5 blur-3xl" />
+
+        <div className="container mx-auto px-6">
+          <div className="max-w-2xl mx-auto text-center animate-fade-in">
+            <div className="flex items-center justify-center gap-3 mb-8">
+              <span className="h-px w-10 bg-accent" />
+              <span className="text-xs tracking-[0.3em] uppercase text-accent font-medium">Форматы участия</span>
+              <span className="h-px w-10 bg-accent" />
+            </div>
+            <h2 className="font-display font-medium leading-[1.1] text-3xl sm:text-4xl lg:text-5xl text-primary">
+              Выберите свой <span className="italic text-accent">путь к преображению</span>
+            </h2>
+          </div>
+
+          <div className="mt-16 grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div className="group relative bg-card border border-border p-8 lg:p-10 flex flex-col animate-fade-in hover:border-accent/50 transition-colors duration-500" style={{ animationDelay: '0.1s' }}>
+              <div className="text-xs tracking-[0.25em] uppercase text-muted-foreground">Групповой формат</div>
+              <h3 className="mt-3 font-display text-3xl text-primary">Мастер-класс</h3>
+
+              <div className="mt-5 flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted-foreground">
+                <span className="flex items-center gap-2"><Icon name="CalendarDays" size={15} className="text-accent" /> Дата уточняется</span>
+                <span className="flex items-center gap-2"><Icon name="Clock" size={15} className="text-accent" /> 3 часа</span>
+              </div>
+
+              <ul className="mt-7 space-y-3 flex-1">
+                {['Тренды 2026 и разбор «своего» стиля', 'Психология образа и первое впечатление', 'Практика создания образов под ситуации', 'Рабочая тетрадь участницы'].map((f) => (
+                  <li key={f} className="flex items-start gap-3 text-primary/90 font-light">
+                    <Icon name="Check" size={17} className="text-accent mt-0.5 flex-shrink-0" />
+                    <span>{f}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <div className="mt-8 pt-6 border-t border-border">
+                <div className="font-display text-4xl text-primary">5 900 ₽</div>
+                <button className="mt-5 w-full inline-flex items-center justify-center gap-3 bg-primary text-primary-foreground px-6 py-4 text-sm tracking-wide uppercase font-medium hover:bg-accent transition-colors duration-300">
+                  Записаться на мастер-класс
+                  <Icon name="ArrowRight" size={17} />
+                </button>
+              </div>
+            </div>
+
+            <div className="group relative bg-primary text-primary-foreground border border-accent p-8 lg:p-10 flex flex-col animate-fade-in" style={{ animationDelay: '0.2s' }}>
+              <div className="absolute -top-3 left-8 bg-accent text-accent-foreground px-4 py-1 text-xs tracking-[0.2em] uppercase font-medium">Персонально</div>
+              <div className="text-xs tracking-[0.25em] uppercase text-primary-foreground/60">1-на-1 с Марикой</div>
+              <h3 className="mt-3 font-display text-3xl">Индивидуальная консультация</h3>
+
+              <div className="mt-5 flex flex-wrap gap-x-6 gap-y-2 text-sm text-primary-foreground/60">
+                <span className="flex items-center gap-2"><Icon name="User" size={15} className="text-accent" /> Только вы</span>
+                <span className="flex items-center gap-2"><Icon name="Clock" size={15} className="text-accent" /> 2 часа</span>
+              </div>
+
+              <ul className="mt-7 space-y-3 flex-1">
+                {['Персональный разбор гардероба', 'Индивидуальная стратегия образа', 'Разбор цветотипа и силуэта', 'Список покупок под ваш стиль'].map((f) => (
+                  <li key={f} className="flex items-start gap-3 font-light">
+                    <Icon name="Check" size={17} className="text-accent mt-0.5 flex-shrink-0" />
+                    <span>{f}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <div className="mt-8 pt-6 border-t border-primary-foreground/15">
+                <div className="font-display text-4xl">14 900 ₽</div>
+                <button className="mt-5 w-full inline-flex items-center justify-center gap-3 bg-accent text-accent-foreground px-6 py-4 text-sm tracking-wide uppercase font-medium hover:bg-primary-foreground hover:text-primary transition-colors duration-300">
+                  Записаться на консультацию
+                  <Icon name="ArrowRight" size={17} />
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-12 max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-5 bg-secondary px-8 py-6 animate-fade-in" style={{ animationDelay: '0.35s' }}>
+            <div className="flex items-center gap-4 text-center sm:text-left">
+              <Icon name="Gift" size={26} className="text-accent flex-shrink-0" />
+              <p className="text-primary font-light">
+                Записавшись сегодня, получите бесплатный гид{' '}
+                <span className="font-medium">«5 базовых вещей для любого гардероба»</span>
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-6 flex items-center justify-center gap-2 text-sm text-muted-foreground animate-fade-in" style={{ animationDelay: '0.45s' }}>
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
+            </span>
+            Осталось всего <span className="text-primary font-medium">6 мест</span> на ближайший мастер-класс
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
