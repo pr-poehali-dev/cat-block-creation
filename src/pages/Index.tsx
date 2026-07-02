@@ -1,9 +1,12 @@
+import { useState } from 'react';
 import Icon from '@/components/ui/icon';
 
 const HERO_IMG = 'https://cdn.poehali.dev/projects/d11bda25-6a45-4ae4-b189-695024deb0e3/files/e557e54e-ea0b-4aa0-b4c6-71fb90723e91.jpg';
 const MARIKA_IMG = 'https://cdn.poehali.dev/projects/d11bda25-6a45-4ae4-b189-695024deb0e3/files/4b617c03-279d-405b-9a13-ab070c4045ed.jpg';
 
 export default function Index() {
+  const [form, setForm] = useState({ name: '', phone: '', format: 'Мастер-класс' });
+
   return (
     <div className="min-h-screen bg-background text-foreground font-sans antialiased">
       <section className="relative overflow-hidden">
@@ -330,6 +333,100 @@ export default function Index() {
           </div>
         </div>
       </section>
+
+      <section className="relative overflow-hidden bg-primary text-primary-foreground py-20 lg:py-28">
+        <div className="pointer-events-none absolute -top-32 left-1/2 -translate-x-1/2 w-[40rem] h-[40rem] rounded-full bg-accent/10 blur-3xl" />
+
+        <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
+          <div className="animate-fade-in">
+            <div className="flex items-center gap-3 mb-8">
+              <span className="h-px w-10 bg-accent" />
+              <span className="text-xs tracking-[0.3em] uppercase text-accent font-medium">Запись</span>
+            </div>
+            <h2 className="font-display font-medium leading-[1.08] text-4xl sm:text-5xl lg:text-6xl">
+              Начните менять свою жизнь <span className="italic text-accent">уже сегодня</span>
+            </h2>
+            <p className="mt-7 text-lg text-primary-foreground/70 leading-relaxed font-light max-w-xl">
+              Создайте образ, который работает на вас. Запишитесь — и станьте той
+              женщиной, ради которой оборачиваются.
+            </p>
+
+            <div className="mt-10 flex flex-col sm:flex-row gap-4">
+              <a href="#" className="inline-flex items-center justify-center gap-3 border border-primary-foreground/25 px-6 py-4 text-sm tracking-wide uppercase font-medium hover:border-accent hover:text-accent transition-colors duration-300">
+                <Icon name="Send" size={18} /> Telegram
+              </a>
+              <a href="#" className="inline-flex items-center justify-center gap-3 border border-primary-foreground/25 px-6 py-4 text-sm tracking-wide uppercase font-medium hover:border-accent hover:text-accent transition-colors duration-300">
+                <Icon name="MessageCircle" size={18} /> WhatsApp
+              </a>
+            </div>
+          </div>
+
+          <div className="animate-fade-in" style={{ animationDelay: '0.15s' }}>
+            <form onSubmit={(e) => e.preventDefault()} className="bg-card text-card-foreground p-8 lg:p-10 border-t-2 border-accent shadow-2xl">
+              <div className="space-y-6">
+                <div>
+                  <label className="block text-xs tracking-[0.2em] uppercase text-muted-foreground mb-2">Имя</label>
+                  <input
+                    type="text"
+                    value={form.name}
+                    onChange={(e) => setForm({ ...form, name: e.target.value })}
+                    placeholder="Как к вам обращаться"
+                    className="w-full bg-transparent border-b border-border py-3 text-primary placeholder:text-muted-foreground/60 focus:border-accent focus:outline-none transition-colors"
+                  />
+                </div>
+                <div>
+                  <label className="block text-xs tracking-[0.2em] uppercase text-muted-foreground mb-2">Телефон</label>
+                  <input
+                    type="tel"
+                    value={form.phone}
+                    onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                    placeholder="+7 ___ ___ __ __"
+                    className="w-full bg-transparent border-b border-border py-3 text-primary placeholder:text-muted-foreground/60 focus:border-accent focus:outline-none transition-colors"
+                  />
+                </div>
+                <div>
+                  <label className="block text-xs tracking-[0.2em] uppercase text-muted-foreground mb-3">Формат</label>
+                  <div className="grid grid-cols-2 gap-3">
+                    {['Мастер-класс', 'Консультация'].map((opt) => (
+                      <button
+                        key={opt}
+                        type="button"
+                        onClick={() => setForm({ ...form, format: opt })}
+                        className={`py-3 text-sm tracking-wide border transition-colors duration-300 ${
+                          form.format === opt
+                            ? 'bg-primary text-primary-foreground border-primary'
+                            : 'border-border text-muted-foreground hover:border-accent'
+                        }`}
+                      >
+                        {opt}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              <button
+                type="submit"
+                className="group mt-8 w-full inline-flex items-center justify-center gap-3 bg-accent text-accent-foreground px-6 py-4 text-sm tracking-wide uppercase font-medium hover:bg-primary hover:text-primary-foreground transition-colors duration-300"
+              >
+                Записаться и преобразиться
+                <Icon name="ArrowRight" size={18} className="group-hover:translate-x-1 transition-transform" />
+              </button>
+
+              <p className="mt-4 text-center text-xs text-muted-foreground">
+                Нажимая кнопку, вы соглашаетесь на обработку данных
+              </p>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <footer className="bg-primary text-primary-foreground/50 border-t border-primary-foreground/10 py-10">
+        <div className="container mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm">
+          <div className="font-display text-xl text-primary-foreground">Marika<span className="text-accent">.</span></div>
+          <div className="tracking-wide">Мастер-класс по стилю · Владивосток</div>
+        </div>
+      </footer>
     </div>
   );
 }
