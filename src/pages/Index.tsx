@@ -318,8 +318,8 @@ export default function Index() {
             <div className="flex items-center gap-4 text-center sm:text-left">
               <Icon name="Gift" size={26} className="text-accent flex-shrink-0" />
               <p className="text-primary font-light">
-                Записавшись сегодня, получите бесплатный гид{' '}
-                <span className="font-medium">«5 базовых вещей для любого гардероба»</span>
+                Записавшись сегодня, получите бесплатный{' '}
+                <span className="font-medium">гид по стилистическим решениям для разных цветотипов</span>
               </p>
             </div>
           </div>
