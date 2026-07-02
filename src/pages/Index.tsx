@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Icon from '@/components/ui/icon';
 
-const HERO_IMG = 'https://cdn.poehali.dev/projects/d11bda25-6a45-4ae4-b189-695024deb0e3/files/e557e54e-ea0b-4aa0-b4c6-71fb90723e91.jpg';
+const HERO_IMG = 'https://cdn.poehali.dev/projects/d11bda25-6a45-4ae4-b189-695024deb0e3/bucket/918b9a98-a4d1-4986-8d5f-98e897338d16.png';
 const MARIKA_IMG = 'https://cdn.poehali.dev/projects/d11bda25-6a45-4ae4-b189-695024deb0e3/files/4b617c03-279d-405b-9a13-ab070c4045ed.jpg';
 
 export default function Index() {
