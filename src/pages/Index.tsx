@@ -1,6 +1,7 @@
 import Icon from '@/components/ui/icon';
 
 const HERO_IMG = 'https://cdn.poehali.dev/projects/d11bda25-6a45-4ae4-b189-695024deb0e3/files/e557e54e-ea0b-4aa0-b4c6-71fb90723e91.jpg';
+const MARIKA_IMG = 'https://cdn.poehali.dev/projects/d11bda25-6a45-4ae4-b189-695024deb0e3/files/4b617c03-279d-405b-9a13-ab070c4045ed.jpg';
 
 export default function Index() {
   return (
@@ -137,6 +138,103 @@ export default function Index() {
             <p className="font-display italic text-xl sm:text-2xl lg:text-3xl text-primary leading-relaxed">
               Каждая женщина носит в себе того самого «человека на миллион» — просто иногда ему нужен проводник, который поможет это раскрыть.
             </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="relative overflow-hidden bg-primary text-primary-foreground py-20 lg:py-28">
+        <div className="pointer-events-none absolute -top-24 -left-24 w-[30rem] h-[30rem] rounded-full bg-accent/10 blur-3xl" />
+
+        <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
+          <div className="relative animate-fade-in order-2 lg:order-1">
+            <div className="absolute -inset-3 border border-accent/40" />
+            <img
+              src={MARIKA_IMG}
+              alt="Марика Захаркина — стилист"
+              className="relative w-full h-[28rem] lg:h-[34rem] object-cover"
+            />
+            <div className="absolute -bottom-6 -right-6 bg-accent text-accent-foreground px-6 py-5 shadow-xl">
+              <div className="font-display text-4xl leading-none">10 лет</div>
+              <div className="mt-1 text-xs tracking-widest uppercase">в профессии</div>
+            </div>
+          </div>
+
+          <div className="animate-fade-in order-1 lg:order-2" style={{ animationDelay: '0.12s' }}>
+            <div className="flex items-center gap-3 mb-8">
+              <span className="h-px w-10 bg-accent" />
+              <span className="text-xs tracking-[0.3em] uppercase text-accent font-medium">
+                Ведущая
+              </span>
+            </div>
+            <h2 className="font-display font-medium leading-[1.12] text-3xl sm:text-4xl lg:text-5xl">
+              Ведёт Марика Захаркина — стилист, который видит в вас <span className="italic text-accent">произведение искусства</span>
+            </h2>
+            <p className="mt-7 text-base sm:text-lg text-primary-foreground/70 leading-relaxed font-light max-w-xl">
+              10 лет опыта. Сотни клиенток, которые пришли за советом — а ушли с новым
+              отношением к себе. Марика не просто подбирает одежду — она помогает
+              раскрыть тот образ, который уже есть внутри вас, просто ждёт своего часа.
+            </p>
+          </div>
+        </div>
+
+        <div className="container mx-auto px-6 mt-20 lg:mt-28">
+          <div className="grid sm:grid-cols-3 gap-6 lg:gap-8">
+            {[
+              {
+                name: 'Ольга, 34',
+                role: 'Руководитель',
+                quote: 'Впервые за годы посмотрела в зеркало и увидела ту, кем всегда хотела быть.',
+              },
+              {
+                name: 'Ирина, 41',
+                role: 'Предприниматель',
+                quote: 'Поменялась не одежда — поменялось то, как я вхожу в комнату.',
+              },
+              {
+                name: 'Анна, 28',
+                role: 'Врач',
+                quote: 'Пришла за гардеробом, ушла с уверенностью, которой хватает на всё.',
+              },
+            ].map((c, i) => (
+              <div
+                key={c.name}
+                className="group bg-primary-foreground/5 border border-primary-foreground/10 p-8 animate-fade-in hover:border-accent/50 transition-colors duration-500"
+                style={{ animationDelay: `${0.2 + i * 0.1}s` }}
+              >
+                <div className="flex items-center gap-4 text-xs tracking-[0.2em] uppercase text-accent">
+                  <span>До</span>
+                  <span className="h-px flex-1 bg-accent/30" />
+                  <span>После</span>
+                </div>
+                <p className="mt-6 font-display italic text-xl leading-relaxed text-primary-foreground">
+                  «{c.quote}»
+                </p>
+                <div className="mt-6 pt-5 border-t border-primary-foreground/10">
+                  <div className="font-medium">{c.name}</div>
+                  <div className="text-sm text-primary-foreground/50">{c.role}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="container mx-auto px-6 mt-16 lg:mt-20">
+          <div className="max-w-3xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-12 text-center sm:text-left animate-fade-in" style={{ animationDelay: '0.5s' }}>
+            <div className="flex items-center gap-3">
+              <Icon name="MapPin" size={22} className="text-accent" />
+              <div>
+                <div className="text-xs tracking-[0.2em] uppercase text-primary-foreground/50">Формат</div>
+                <div className="font-medium">Очно во Владивостоке</div>
+              </div>
+            </div>
+            <span className="hidden sm:block h-10 w-px bg-primary-foreground/15" />
+            <div className="flex items-center gap-3">
+              <Icon name="CalendarDays" size={22} className="text-accent" />
+              <div>
+                <div className="text-xs tracking-[0.2em] uppercase text-primary-foreground/50">Дата и место</div>
+                <div className="font-medium">Дата уточняется · центр города</div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
