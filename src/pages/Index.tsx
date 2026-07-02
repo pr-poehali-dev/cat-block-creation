@@ -277,7 +277,7 @@ export default function Index() {
               </ul>
 
               <div className="mt-8 pt-6 border-t border-border">
-                <div className="font-display text-4xl text-primary">5 900 ₽</div>
+                <div className="font-display text-4xl text-primary">3 000 ₽</div>
                 <button className="mt-5 w-full inline-flex items-center justify-center gap-3 bg-primary text-primary-foreground px-6 py-4 text-sm tracking-wide uppercase font-medium hover:bg-accent transition-colors duration-300">
                   Записаться на мастер-класс
                   <Icon name="ArrowRight" size={17} />
