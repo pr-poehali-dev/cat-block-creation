@@ -77,6 +77,69 @@ export default function Index() {
           </div>
         </div>
       </section>
+
+      <section className="relative overflow-hidden py-20 lg:py-28">
+        <div className="pointer-events-none absolute top-1/3 left-1/2 -translate-x-1/2 w-[40rem] h-[40rem] rounded-full bg-accent/5 blur-3xl" />
+
+        <div className="container mx-auto px-6">
+          <div className="max-w-3xl mx-auto text-center animate-fade-in">
+            <div className="flex items-center justify-center gap-3 mb-8">
+              <span className="h-px w-10 bg-accent" />
+              <span className="text-xs tracking-[0.3em] uppercase text-accent font-medium">
+                Путь преображения
+              </span>
+              <span className="h-px w-10 bg-accent" />
+            </div>
+            <h2 className="font-display font-medium leading-[1.1] text-3xl sm:text-4xl lg:text-5xl text-primary">
+              Это не просто мастер-класс — <span className="italic text-accent">это путь к новой себе</span>
+            </h2>
+          </div>
+
+          <div className="mt-16 grid md:grid-cols-3 gap-10 lg:gap-8">
+            {[
+              {
+                step: '01',
+                verb: 'Узнаете',
+                text: 'Актуальные тренды 2026 и как отличать «моду для всех» от «стиля для себя».',
+              },
+              {
+                step: '02',
+                verb: 'Поймёте',
+                text: 'Психологию стиля: как одежда меняет самоощущение и как управлять первым впечатлением.',
+              },
+              {
+                step: '03',
+                verb: 'Научитесь',
+                text: 'Создавать образы, которые работают на вас в любой ситуации: работа, свидание, важная встреча.',
+              },
+            ].map((s, i) => (
+              <div
+                key={s.step}
+                className="group relative animate-fade-in"
+                style={{ animationDelay: `${0.15 + i * 0.12}s` }}
+              >
+                <div className="font-display text-7xl lg:text-8xl leading-none text-accent/20 group-hover:text-accent/40 transition-colors duration-500">
+                  {s.step}
+                </div>
+                <div className="mt-4 flex items-center gap-3">
+                  <span className="h-px w-8 bg-accent" />
+                  <h3 className="font-display text-2xl lg:text-3xl text-primary">{s.verb}</h3>
+                </div>
+                <p className="mt-4 text-muted-foreground font-light leading-relaxed">
+                  {s.text}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-20 max-w-2xl mx-auto text-center animate-fade-in" style={{ animationDelay: '0.6s' }}>
+            <Icon name="Quote" size={28} className="mx-auto text-accent/50 mb-5" />
+            <p className="font-display italic text-xl sm:text-2xl lg:text-3xl text-primary leading-relaxed">
+              Каждая женщина носит в себе того самого «человека на миллион» — просто иногда ему нужен проводник, который поможет это раскрыть.
+            </p>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
